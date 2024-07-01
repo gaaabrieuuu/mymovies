@@ -7,6 +7,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TMDBService } from './services/tmdb.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CardsListComponent } from './components/cards-list/cards-list.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,12 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    HeaderComponent
+    HeaderComponent,
+    CardsListComponent
   ],
-  providers: [],
+  providers: [TMDBService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
